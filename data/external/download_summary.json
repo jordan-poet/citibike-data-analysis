@@ -1,0 +1,23 @@
+{
+  "download_timestamp": "2025-06-11T17:53:11.349589",
+  "files": [
+    {
+      "filename": "202503-citibike-tripdata.csv.zip",
+      "size_mb": 120.54,
+      "rows": "N/A (zip file)",
+      "columns": []
+    },
+    {
+      "filename": "202503-citibike-tripdata.csv",
+      "size_mb": 589.73,
+      "rows": 3168271,
+      "columns": [
+        "ride_id",
+        "rideable_type",
+        "started_at",
+        "ended_at",
+        "start_station_name"
+      ]
+    }
+  ]
+}
