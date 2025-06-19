@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Citi Bike Data Downloader - Using only built-in Python libraries
-Works with your existing project structure
+Downloader Template 
 """
 
+# import libraries for use
 import urllib.request
 import urllib.error
 import zipfile
@@ -11,9 +11,9 @@ import json
 import os
 from pathlib import Path
 from datetime import datetime, timedelta
-import argparse
+import argparse  
 
-class CitiBikeDownloader:
+class Downloader:
     def __init__(self, project_root=None):
         """Initialize with project structure"""
         if project_root is None:
@@ -28,9 +28,9 @@ class CitiBikeDownloader:
             dir_path.mkdir(parents=True, exist_ok=True)
     
     def download_file(self, year_month):
-        """Download Citi Bike data for specific year-month"""
-        filename = f"{year_month}-citibike-tripdata.csv.zip"
-        url = f"https://s3.amazonaws.com/tripdata/{filename}"
+        """Download data for specific year-month"""
+        filename = f"{year_month}-citibike-tripdata.csv.zip" #modify this 
+        url = f"https://s3.amazonaws.com/tripdata/{filename}" #modify this 
         filepath = self.raw_data_dir / filename
         
         print(f"Downloading {filename}...")
@@ -180,7 +180,7 @@ def main():
     
     args = parser.parse_args()
     
-    downloader = CitiBikeDownloader()
+    downloader = Downloader()
     
     if args.month:
         # Download specific month
@@ -206,7 +206,6 @@ def main():
     
     print(f"\n🎉 Download complete!")
     print(f"📁 Data location: {downloader.raw_data_dir}")
-    print(f"💡 Next: Start analyzing with your src/ modules!")
 
 if __name__ == "__main__":
     main()
